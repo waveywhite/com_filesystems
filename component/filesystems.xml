@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2" method="upgrade">
+	<name>COM_FILESYSTEMS</name>
+	<creationDate>July 2014</creationDate>
+	<author>David White</author>
+	<authorEmail>david@netriver.co.uk</authorEmail>
+	<authorUrl>http://www.netriver.co.uk</authorUrl>
+	<copyright>2012 Netriver Systems Limited</copyright>
+	<license>GPL 2.0</license>
+	<version>0.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_FILESYSTEMS_DESC</description>
+
+	<!-- A script to run on install, update or uninstall -->
+	<scriptfile>install.php</scriptfile>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysqli" charset="utf8">sql/install.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysqli" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Site Main File Copy Section -->
+
+	<administration>
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>filesystems.php</filename>
+			<filename>controller.php</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<folder>sql</folder>
+			<folder>js</folder>
+			<folder>views</folder>
+			<folder>models</folder>
+			<folder>controllers</folder>
+			<folder>tables</folder>
+			<folder>helpers</folder>
+			<folder>base</folder>
+			<folder>css</folder>
+			<folder>language</folder>
+			<folder>cli</folder>
+			<folder>lib</folder>
+		</files>
+
+	</administration>
+
+</extension>
